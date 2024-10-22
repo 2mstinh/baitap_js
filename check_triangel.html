@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Bài tập JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2><span id="result"></span></h2>
+    <script>
+        function isNumber(prtMsg){
+            let n;
+            while(true){
+                n =prompt(prtMsg);
+                if(!isNaN(n) && n.trim()!=""){
+                    return parseInt(n)
+                }
+                else{
+                    alert("Giá trị không hợp lệ");
+                }
+            }
+        }
+
+        function checkTriangle(a, b, c) {
+            if (a + b > c && a + c > b && b + c > a) {
+                if ((a === b && a != c) || (a === c && a != b) || (b === c && b != a)) {
+                    return "Tam giác cân";
+                } else if (a === b && a === c) {
+                    return "Tam giác đều";
+                } else if (a * a + b * b == c * c || a * a + c * c == b * b || b * b + c * c == a * a) {
+                    return "Tam giác vuông";
+                } else {
+                    return "Tam giác thường";
+                }
+            } else {
+                return "Không phải là tam giác";
+            }
+        }
+
+        let a = isNumber("nhập một số nguyên (cạnh 1): ");
+        let b = isNumber("nhập một số nguyên (cạnh 2): ");
+        let c = isNumber("nhập một số nguyên (cạnh 3): ");
+        let result = checkTriangle(a, b, c);
+
+        document.getElementById("result").innerHTML = result;
+    </script>
+    
+    <div style="text-align: center;">
+        <a class="calculate__block" href="./index.html">
+            <button type="button">Return</button>
+        </a>
+    </div>
+</body>
+</html>

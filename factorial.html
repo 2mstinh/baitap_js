@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Bài tập JS</title>
+</head>
+<body>
+    <h2>Giai thừa của <span id="number"></span> là: <span id="fac"></span></h2>
+    <script>
+        let number_a;
+        while(true){
+            number_a = prompt("vui lòng nhập một số nguyên: ");
+            if(!isNaN(number_a)&&number_a.trim()!==""){
+                break;
+            }else{
+                alert("Giá trị không hợp lệ vui lòng nhập lại!")
+            }
+        }
+        
+        number_a = parseInt(number_a);
+        document.getElementById("number").innerHTML=number_a;
+        function factorial(n){
+            if(n<=0){
+                return 1;
+            }else{
+                return n*factorial(n-1);
+            }
+        }
+        document.getElementById("fac").innerHTML=factorial(number_a);
+    </script>
+
+    <div style="text-align: center;">
+        <a class="calculate__block" href="./index.html">
+            <button type="button">Return</button>
+        </a>
+    </div>
+</body>
+</html>

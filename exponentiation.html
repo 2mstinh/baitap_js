@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Bài tập JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2><span id="number"></span> lũy thừa <span id="power_of"></span> là: <span id="result"></span></h2>
+    <script>
+        function isNumber(promptMsg){
+            let n;
+            while(true){
+                n = prompt(promptMsg);
+                if(!isNaN(n)&&n.trim()!=""){
+                    return parseInt(n);
+                }else{
+                    alert("Giá trị không hợp lệ vui lòng nhập lại!");
+                }
+            }
+        }
+        let number_a = isNumber("Nhập một số nguyên: ");
+        let power = isNumber(number_a + " " + "lũy thừa: ");
+        let result = Math.pow(number_a, power);
+        
+        document.getElementById("number").innerHTML = number_a;
+        document.getElementById("power_of").innerHTML = power;
+        document.getElementById("result").innerHTML = result;
+    </script>
+
+    <div style="text-align: center;">
+        <a class="calculate__block" href="./index.html">
+            <button type="button">Return</button>
+        </a>
+    </div>
+</body>
+</html>

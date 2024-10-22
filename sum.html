@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Bài tập JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Tổng từ 1 tới <span id="so_n"></span> là: <span id="result"></span></h2>
+    <script>
+        function isNumber(prtMsg){
+            let n;
+            while(true){
+                n =prompt(prtMsg);
+                if(!isNaN(n) && n.trim()!=""){
+                    return parseInt(n)
+                }
+                else{
+                    alert("Giá trị không hợp lệ");
+                }
+            }
+        }
+
+        function Sum(n){
+            let s = 0;
+            for(let i = 0; i <= n; i++){
+                s += i;
+            }
+            return s;
+        }
+
+        let a = isNumber("Nhập số n: ");
+    
+        let result = Sum(a);
+        document.getElementById("so_n").innerHTML = a;
+        document.getElementById("result").innerHTML = result;
+    </script>
+
+    <div style="text-align: center;">
+        <a class="calculate__block" href="./index.html">
+            <button type="button">Return</button>
+        </a>
+    </div>
+</body>
+</html>
